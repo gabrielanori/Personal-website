@@ -1,0 +1,182 @@
+
+* { /* soft reset do CSS o seletor + generico por padrao*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+  background-image: url('../img/fundo.jpg');
+  background-size: 150vw 150vh;
+  font-family: 'Pompiere', cursive;
+  height: 100vh; /*altura do body*/
+  font-size: 12px;
+}
+/* se a tela tiver pelo menos 400px vai carregar esses estilos*/
+@media (min-width: 400px) {
+    body {
+        font-size: 14px;
+    }
+}
+/*breakpoint*/
+@media (min-width: 600px) {
+    body {
+        font-size: 18px;
+    }
+}
+/*breakpoint*/
+@media (min-width: 1200px) {
+    body {
+        font-size: 20px;
+    }
+}
+header{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu{
+   background-color: lightgoldenrodyellow;
+   position: fixed;
+   width: 100vw;
+   top: 0;
+   z-index: 1;
+}
+.menu ul{
+    display: flex;
+    justify-content:space-around;
+}
+
+  .menu li {
+    list-style: none;
+}
+
+.menu a{
+    display: block;
+    padding: 10px 20px;
+    transition: background-color 1s, color 1s;
+}
+
+.menu a:active,
+.menu a:hover {
+  background-color: teal;
+  color: white;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+  font-size: x-large;
+   
+}
+a:hover{
+  text-decoration: underline;
+  
+}
+
+.titulo {
+    transform: scale(0.2) translateY(50vh);
+    opacity: 0;
+    animation: 1s ease 2s animacaoTitulo forwards;
+}
+
+@keyframes animacaoTitulo {
+    from {
+      transform: scale(0.2) translateY(50vh);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+  }
+.site-title, 
+.site-subtitle {
+  color: darkolivegreen;
+  text-align: center;
+  font-family: 'Indie Flower', cursive;
+}
+.site-title {
+    font-size: 4em;
+    font-family: 'Indie Flower', cursive;
+}
+
+.site-subtitle{
+  font-style: italic;
+  font-family: 'Courgette', cursive;
+  line-height: 1.8em;
+}
+
+.contato,
+.portifolio {
+    padding: 2em;
+    height: 100vh;
+    color: darkslategrey;
+}
+
+.portifolio h2{
+    font-family: 'Pompiere', cursive;
+    margin-bottom: 1.5em;
+
+}
+
+.portifolio .grid {
+    display: grid;
+    gap: 2em;
+
+}
+@media (min-width: 560px){
+    .portifolio, .grid {
+        grid-template-columns: 240px 240px;
+        justify-content: space-around;
+        
+    }
+}
+@media (min-width: 880px){
+    .portifolio, .grid {
+        grid-template-columns: repeat(3, 260px);/* 330px 330px 330px; */
+        align-content: center;
+        justify-content: space-around;
+        /* height: calc(100vh - 8em - 48px)alinhamento vertical*/
+    }
+}
+
+.portifolio figure{
+    text-align: center;
+}
+
+.img-portfolio{
+    height: 200px;
+    width: 300px;
+    object-fit: cover;
+    object-position: left bottom; /* dentro do cover q faz caber na pagina ele ajusta a posicão para qual lado vai aparece*/
+    transition: transform 500ms;
+    border-radius: 10%;
+}
+/* @media (min-width: 880px){
+    .img-portfolio{
+        height: auto;
+        width: 100%;
+    }
+}*/
+
+
+.img-portfolio:hover {
+    transform: scale(1.2) rotate(-2deg);
+  }
+
+.contato .icons {
+    text-align: center;
+}
+.contato a {
+    color: crimson;
+    font-size: 3em;
+    transition: text-shadow 1s;
+}
+
+.contato a:active,
+.contato a:hover  {
+  text-decoration: none;
+  text-shadow: 0px 0px 10px rgba(255,255,255,.5);
+}
+
