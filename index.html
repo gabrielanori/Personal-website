@@ -9,12 +9,14 @@
       href="https://fonts.googleapis.com/css2?family=Courgette&family=Indie+Flower&family=Pompiere&family=Roboto&display=swap"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Schoolbell&family=Tangerine&display=swap" rel="stylesheet">
+
     <script src="https://kit.fontawesome.com/76cccdd315.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
       <nav class="menu">
-        <ul>
+        <ul class="container">
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#portfolio">Portfólio</a></li>
           <li><a href="#contato">Contato</a></li>
@@ -27,18 +29,44 @@
         <h2 class="site-subtitle">Web Developer</h2>
       </div>
     </header>
+  <section class="sobre container" id="sobre"> <!-- se digitarmos section.sobre e dermos enter ele já abre e fecha-->
+    <h2>Sobre</h2>
+
+    <figure class="avatar">
+      <img src="./img/gabi_foto.jpeg" alt="Gabriela Nori">
+    </figure>
+    <p>
+      Em transição de carreira busco cada vez mais um aprofundamento na área tecnológica. <br>
+      Formação: <br>
+      - Bacharel em Gestão Ambiental pela Universidade de São Paulo <br>
+      - Análise e Desenvolvimento de Sistemas pela Faculdade Impacta de Tecnologia  <br>
+      - Inglês Fluente pela English Live
+     
+    </p>
+  </section>
   <section class="portifolio" id="portfolio">
     <h2>Portfólio</h2>
 
     <div class="grid">
-      <figure>
-        <img
-          class="img-portfolio"
-          src="./img/ecommerce-creditos-s-o-c-i-a-l-c-u-t-unsplash.jpg"
-          alt="eCommerce"
-        />
-        <figcaption>eCommerce</figcaption>
-      </figure>
+      <div class="flip-card">
+      <div class="card">
+
+        <figure>
+          <img
+            class="img-portfolio"
+            src="./img/ecommerce-creditos-s-o-c-i-a-l-c-u-t-unsplash.jpg"
+            alt="eCommerce"
+          />
+          <figcaption>eCommerce</figcaption>
+        </figure>
+      <div class="card-back">
+        É o verso 
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card">
+    <div class="card">
       <figure>
         <img
           class="img-portfolio"
@@ -47,6 +75,15 @@
         />
         <figcaption>Mobile</figcaption>
       </figure>
+      <div class="card-back">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card">
+    <div class="card">
+
       <figure>
         <img
           class="img-portfolio"
@@ -55,6 +92,16 @@
         />
         <figcaption>Web design</figcaption>
       </figure>
+
+      <div class="card-back">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card">
+    <div class="card">
+
       <figure>
         <img
           class="img-portfolio"
@@ -63,7 +110,13 @@
         />
         <figcaption>Projetos pessoais</figcaption>
       </figure>
+      <div class="card-back">
+
+      </div>
     </div>
+  </div>
+    </div>
+
   </section>
   <section class="contato" id="contato">
     <h2>Contato</h2>

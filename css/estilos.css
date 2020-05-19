@@ -2,7 +2,7 @@
 * { /* soft reset do CSS o seletor + generico por padrao*/
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: content-box;
 }
 body {
   background-image: url('../img/fundo.jpg');
@@ -30,7 +30,7 @@ body {
     }
 }
 header{
-    height: 100vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,14 +40,14 @@ header{
    position: fixed;
    width: 100vw;
    top: 0;
-   z-index: 1;
+   z-index: 1; /* tirou a sobreposição das imagens no navbar, tira a preferência do eixo y*/
 }
 .menu ul{
     display: flex;
     justify-content:space-around;
 }
 
-  .menu li {
+.menu li {
     list-style: none;
 }
 
@@ -77,10 +77,10 @@ a:hover{
 .titulo {
     transform: scale(0.2) translateY(50vh);
     opacity: 0;
-    animation: 1s ease 2s animacaoTitulo forwards;
+    animation: 0.5s ease 0.5s animacaoTitulo forwards;
 }
 
-@keyframes animacaoTitulo {
+@keyframes animacaoTitulo {  /* poderia ser 0% e 100% ao invez de from to*/
     from {
       transform: scale(0.2) translateY(50vh);
       opacity: 0;
@@ -92,65 +92,147 @@ a:hover{
   }
 .site-title, 
 .site-subtitle {
-  color: darkolivegreen;
+  color: darkslategray;
   text-align: center;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Schoolbell', cursive;
 }
 .site-title {
     font-size: 4em;
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Schoolbell', cursive;
 }
 
 .site-subtitle{
   font-style: italic;
-  font-family: 'Courgette', cursive;
+  font-family: 'Schoolbell', cursive;
   line-height: 1.8em;
 }
 
+.sobre,
 .contato,
 .portifolio {
     padding: 2em;
-    height: 100vh;
+   /* height: 100vh; */
     color: darkslategrey;
 }
 
+@media (min-width: 1200px) {
+    .container {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1200px;
+    }
+  }
+
+.sobre h2,
+.contato h2,
 .portifolio h2{
     font-family: 'Pompiere', cursive;
-    margin-bottom: 1.5em;
+    margin-bottom: 1.2em;
+    color: darkslategrey;
+    font-size: 2em;
 
 }
 
+.sobre p {
+    color: lightgoldenrodyellow;
+    text-indent: 1.4em;
+    margin-bottom: 1.4em;
+    text-align: center;
+    font-size: 1.6em;
+  }
+  
+  .sobre a {
+    color: white;
+    text-decoration: underline;
+  }
+  
+  .sobre a:hover {
+    background-color: cyan;
+    text-decoration: none;
+    color: magenta;
+  }
+  
+  .sobre .avatar {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /*tem formatos prontos para cortar*/
+    margin-left: 2em; /*margem à esquerda imagem*/
+    max-width: 200px; max-height: 150px 
+    /*float pode ser usado para o texto fluruar ao redor da imagem*/
+  }
+  
+  @media (min-width: 600px) {
+    .sobre .avatar {
+      clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+      float: right;
+    }
+  }
+    
 .portifolio .grid {
     display: grid;
-    gap: 2em;
+    gap: 2.5em;
 
 }
 @media (min-width: 560px){
     .portifolio, .grid {
-        grid-template-columns: 240px 240px;
+        grid-template-columns: 240px 300px;
         justify-content: space-around;
         
     }
 }
 @media (min-width: 880px){
     .portifolio, .grid {
-        grid-template-columns: repeat(3, 260px);/* 330px 330px 330px; */
+        grid-template-columns: repeat(3, 300px);/* 330px 330px 330px; */
         align-content: center;
         justify-content: space-around;
         /* height: calc(100vh - 8em - 48px)alinhamento vertical*/
     }
 }
 
+
+.flip-card {
+    height: 180px;
+    perspective: 1000px;
+  }
+  
+  .flip-card:hover .card {
+    transform: rotateY(180deg);
+  }
+  
+  .card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+  }
+  
+  .card-front, 
+  .card-back {
+    backface-visibility: hidden;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  
+  .card-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, .7);
+    height: 180px;
+    width: 300px;
+    transform: rotateY(180deg);
+    border-radius: 10%;
+  }
+  
 .portifolio figure{
     text-align: center;
 }
 
 .img-portfolio{
-    height: 200px;
+    height: 180px;
     width: 300px;
     object-fit: cover;
     object-position: left bottom; /* dentro do cover q faz caber na pagina ele ajusta a posicão para qual lado vai aparece*/
-    transition: transform 500ms;
+    /* transition: transform 500ms; */
     border-radius: 10%;
 }
 /* @media (min-width: 880px){
@@ -161,17 +243,17 @@ a:hover{
 }*/
 
 
-.img-portfolio:hover {
+/* .img-portfolio:hover {
     transform: scale(1.2) rotate(-2deg);
-  }
-
+  } rotaciona para o lado
+*/
 .contato .icons {
     text-align: center;
 }
 .contato a {
     color: crimson;
     font-size: 3em;
-    transition: text-shadow 1s;
+    transition: text-shadow 1s; /*acende uma luzinha*/
 }
 
 .contato a:active,
