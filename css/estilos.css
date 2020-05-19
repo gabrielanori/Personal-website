@@ -166,6 +166,13 @@ a:hover{
     }
   }
     
+  @media (min-width: 300px) {
+    .sobre .avatar {
+      clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+      float: right;
+    }
+  }
+
 .portifolio .grid {
     display: grid;
     gap: 2.5em;
@@ -227,6 +234,11 @@ a:hover{
     text-align: center;
 }
 
+@media (min-width: 300px){
+  .portifolio figure {
+   text-align: inherit;
+  }
+}
 .img-portfolio{
     height: 180px;
     width: 300px;
